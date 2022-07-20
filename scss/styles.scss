@@ -1,0 +1,98 @@
+@import '_reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+$font: 'Montserrat', sans-serif;
+$title-color: #4E5150;
+$subtitle-color: #A9A9A9;
+$button-bg: #E5E5E5;
+$button-description: #BDBDBD;
+
+@mixin flexible ($direction,$alignx, $aligny) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $alignx;
+    align-items: $aligny;
+}
+
+.Body {
+    font-family: $font;
+    font-size: 16px;
+    font-weight: 600;
+}
+.Header {
+    @include flexible(column,center,center);
+    margin: 35px auto 15px auto;
+}
+.Portrait {
+    width: 6em;
+    & img {
+        border-radius: .7em;
+    }
+}
+.H1 {
+    font-size: .9em;
+    color: $title-color;
+    margin-top: 7px;
+}
+.Location {
+    font-size: .6em;
+    color: $subtitle-color;
+    line-height: 1.2em;
+}
+.ButtonArray {
+    @include flexible(row,center,center);
+    width: 80%;
+    margin: 0 auto;
+}
+.Button {
+    @include flexible(column,center,center);
+    background-color: $button-bg;
+    border-radius: .7em;
+    min-width: 90px;
+    line-height: 1.1em;
+    padding: 7px 0;
+    margin: 0 7px;
+}
+.Quantity {
+    font-size: .75em;
+    color: $title-color;
+}
+.Description {
+    font-size: .75em;
+    color: $button-description;
+}
+.Mosaic {
+    display: grid;
+    grid-template-areas: "pic1 pic2 pic2"
+                        "pic3 pic3 pic4"
+                        "pic5 pic6 pic4";
+    grid-gap: .7em;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.MosaicPic {
+    &:nth-of-type(1) {
+        grid-area: pic1;
+    }
+    &:nth-of-type(2) {
+        grid-area: pic2;
+    }
+    &:nth-of-type(3) {
+        grid-area: pic3;
+    }
+    &:nth-of-type(4) {
+        grid-area: pic4;
+    }
+    &:nth-of-type(5) {
+        grid-area: pic5;
+    }
+    &:nth-of-type(6) {
+        grid-area: pic6;
+    }
+    & img {
+        border-radius: .7em;
+        height: 100%;
+    }
+}
