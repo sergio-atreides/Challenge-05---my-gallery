@@ -6,7 +6,7 @@ $font: 'Montserrat', sans-serif;
 $title-color: #4E5150;
 $subtitle-color: #A9A9A9;
 $button-bg: #E5E5E5;
-$button-description: #BDBDBD;
+$footer-color: #BDBDBD;
 
 @mixin flexible ($direction,$alignx, $aligny) {
     display: flex;
@@ -60,7 +60,7 @@ $button-description: #BDBDBD;
 }
 .Description {
     font-size: .75em;
-    color: $button-description;
+    color: $footer-color;
 }
 .Mosaic {
     display: grid;
@@ -94,5 +94,18 @@ $button-description: #BDBDBD;
     & img {
         border-radius: .7em;
         height: 100%;
+    }
+}
+.Footer {
+    width: 100%;
+    &-p {
+        text-align: center;
+        color: $footer-color;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    &-a {
+        text-decoration: underline;
+        font-weight: bold;
     }
 }
